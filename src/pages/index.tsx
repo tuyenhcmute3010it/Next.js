@@ -1,14 +1,9 @@
 'use client'
 import Head from 'next/head'
-import Button from '@mui/material/Button'
-import { useTheme } from '@emotion/react'
-import { useSettings } from 'src/hooks/useSettings'
-import { Typography } from '@mui/material'
+import CustomTextField from 'src/components/text-field'
+import { Box } from '@mui/material'
 
 export default function Home() {
-  const theme = useTheme()
-  const { settings } = useSettings()
-  console.log('theme ', { theme, settings })
   return (
     <>
       <Head>
@@ -17,8 +12,9 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Button variant='contained'>Hello world</Button>
-      <Typography>Update ne </Typography>
+      <Box sx={{ margin: 6, width: '200px' }}>
+        <CustomTextField id='outlined-multiline-flexible' label='Multiline' />
+      </Box>
     </>
   )
 }
